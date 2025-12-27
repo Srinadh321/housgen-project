@@ -20,4 +20,12 @@ exports.getAllHouses = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+exports.getAllHouses = async (req, res) => {
+  try {
+    const houses = await House.find();
+    res.status(200).json(houses);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 //i am changind
